@@ -53,7 +53,7 @@ sudo apt-get install postgresql postgresql-contrib
 Instalar Ruby 2.6 e instalar Ruby on Rails 6.0.4
 
 ```bash
-rvm install 3.1
+rvm install 3.1.0
 gem install rails -v 7.0.4
 ```
 
