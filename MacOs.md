@@ -41,7 +41,7 @@ brew install postgresql
 
 ## 4. Ruby y Rails
 
-Instala Ruby 2.6 y Ruby on Rails 6.0.4
+Instala Ruby 3.1.0 y Ruby on Rails 7.0.4
 
 ```bash
 rvm install 3.1.0
