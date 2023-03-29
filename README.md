@@ -8,3 +8,4 @@ Cualquier error o duda que tengas, primero deberas buscar el error en internet, 
 
 - [Setup de Ubuntu](./Ubuntu.md)
 - [Setup de MacOs](./MacOs.md)
+- [Rubocop](./Rubocop.md)
