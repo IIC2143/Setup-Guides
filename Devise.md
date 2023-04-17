@@ -164,7 +164,7 @@ rails generate migration AddNameToUsers
 En este caso, queremos agregar el atributo `name` a nuestro modelo, por eso, el nombre de la migracion es `AddNameToUsers`. Luego, debemos abrir el archivo que se nos creó en `db/migrate` y agregar lo siguiente:
 
 ```ruby
-class AddNameToUser < ActiveRecord::Migration[7.0]
+class AddNameToUsers < ActiveRecord::Migration[7.0]
   def change
     add_column :users, :name, :string
   end
