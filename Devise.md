@@ -240,7 +240,7 @@ Y reemplazar `:attribute` por `:name`, si fueran varios atributos, por ejemplo, 
 
 ## Formularios
 
-Finalmente, debemos agregar el campo de nuestros nuevos atributos en las vistas. Para esto debemos abrir `app/views/users/registrations/new.html.erb` y agregar lo siguiente entre los campos de `:password_confirmation` y `:submit`:
+Finalmente, debemos agregar el campo de nuestros nuevos atributos en las vistas. Para esto debemos abrir `app/views/devise/registrations/new.html.erb` y agregar lo siguiente entre los campos de `:password_confirmation` y `:submit`:
 
 ```html
   ...
@@ -251,7 +251,7 @@ Finalmente, debemos agregar el campo de nuestros nuevos atributos en las vistas.
   ...
 ```
 
-Repetimos lo mismo en `app/views/users/registrations/edit.html.erb`.
+Repetimos lo mismo en `app/views/devise/registrations/edit.html.erb`.
 
 Tambien, en `app/views/layouts/application.html.erb` editamos el bloque agregado anteriormente dejandolo de la siguiente forma:
 
