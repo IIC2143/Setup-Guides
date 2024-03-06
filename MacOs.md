@@ -181,4 +181,4 @@ Ahora utilizando tu consola, corre el servidor del proyecto con el siguiente com
 rails s
 ```
 
-Ahora que tienes el servidor corriendo, dirígete a http://localhost:3000/ y debería aparecernos el mensaje _Yay! You’re on Rails!_
+Ahora que tienes el servidor corriendo, dirígete a http://localhost:3000/ y debería aparecernos el el logo de Ruby on Rails.
