@@ -1,5 +1,7 @@
 # Manual de Instalación
 Se recomienda a los usuarios de Mac M1 o M2, que esta instalacion se haga en un terminal de Rosetta.
+
+Para mac se tienen 2 opciones, se puede seguir esta guia que generalmente trae varios problemas a los sistemas operativos mas nuevos o ocupar rbenv. Se tiene una guia tambien de esto en los archivos del setup
 ## 1. Homebrew
 
 Primero verifica si tienes _Homebrew_ instalado ejecutando:
