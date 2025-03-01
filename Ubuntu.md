@@ -50,10 +50,10 @@ sudo apt-get install postgresql postgresql-contrib
 
 ## 5. Ruby y Rails
 
-Instalar Ruby 3.1.0 e instalar Ruby on Rails 7.0.4
+Instalar Ruby 3.3.6 e instalar Ruby on Rails 7.0.4
 
 ```bash
-rvm install 3.1.0
+rvm install 3.3.6
 gem install rails -v 7.0.4
 ```
 
