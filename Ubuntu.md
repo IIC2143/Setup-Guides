@@ -57,6 +57,14 @@ rvm install 3.3.6
 gem install rails -v 7.0.4
 ```
 
+
+Luego correr 
+
+```bash
+gem uninstall concurrent-ruby
+gem install concurrent-ruby -v 1.3.4
+```
+
 ## 6. Node
 
 Ahora tenemos que instalar Node (un [_runetime_](https://en.wikipedia.org/wiki/Runtime_library) de JavaScript), para lo que utilizaremos _Node Version Manager_ o _nvm_ (las versiones más recientes de RoR necesitan Node).
