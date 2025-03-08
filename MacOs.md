@@ -50,6 +50,13 @@ rvm install 3.3.6
 gem install rails -v 7.0.4
 ```
 
+Luego correr 
+
+```bash
+gem uninstall concurrent-ruby
+gem install concurrent-ruby -v 1.3.4
+```
+
 ## 5. PostgreSQL: superuser
 
 Ahora lo último antes de iniciar el proyecto! Debemos crear un nuevo `superuser` de PostgreSQL. Para esto primero debemos iniciar un servicio de PostgreSQL, ejecutando el siguiente comando:
