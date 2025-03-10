@@ -183,7 +183,13 @@ Recuerda reemplazar `<nombre proyecto>` por el nombre que elegiste para el proye
 
 ## 12. Crear base de datos
 
-Necesitamos una base de datos para tu app! El siguiente comando creará una por ti:
+Es posible que tu proyecto se creara con la versión incorrecta de la gema concurrent-ruby, por lo que debes ir a tu archivo `Gemfile` y ver si es que está presente la siguiente linea, si es que está, sigue con la creación de la base de datos, si es que no está, agrégala:
+
+```bash
+gem 'concurrent-ruby', '1.3.4' 
+```
+
+Necesitamos una base de datos para tu app! El siguiente comando creará una por ti al ejecutarlo en tu consola:
 
 ```bash
 rails db:create
