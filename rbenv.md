@@ -41,20 +41,14 @@ brew install postgresql
 
 ## 4. Ruby y Rails
 
-Instala Ruby 3.3.6 y Ruby on Rails 7.0.4
+Instala Ruby 3.3.6 y Ruby on Rails 7.1.0
 
 ```bash
 rbenv install 3.3.6
 rbenv global 3.3.6 
-gem install rails -v 7.0.4
+gem install rails -v 7.1.0
 ```
 
-Luego correr 
-
-```bash
-gem uninstall concurrent-ruby
-gem install concurrent-ruby -v 1.3.4
-```
 ## 5. PostgreSQL: superuser
 
 Ahora lo último antes de iniciar el proyecto! Debemos crear un nuevo `superuser` de PostgreSQL. Para esto primero debemos iniciar un servicio de PostgreSQL, ejecutando el siguiente comando:
