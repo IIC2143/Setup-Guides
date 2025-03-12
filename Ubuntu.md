@@ -50,11 +50,11 @@ sudo apt-get install postgresql postgresql-contrib
 
 ## 5. Ruby y Rails
 
-Instalar Ruby 3.3.6 e instalar Ruby on Rails 7.0.4
+Instalar Ruby 3.3.6 e instalar Ruby on Rails 7.1.0
 
 ```bash
 rvm install 3.3.6
-gem install rails -v 7.0.4
+gem install rails -v 7.1.0
 ```
 
 
@@ -183,11 +183,7 @@ Recuerda reemplazar `<nombre proyecto>` por el nombre que elegiste para el proye
 
 ## 12. Crear base de datos
 
-Es posible que tu proyecto se creara con la versión incorrecta de la gema concurrent-ruby, por lo que debes ir a tu archivo `Gemfile` y ver si es que está presente la siguiente linea, si es que está, sigue con la creación de la base de datos, si es que no está, agrégala:
 
-```bash
-gem 'concurrent-ruby', '1.3.4' 
-```
 
 Necesitamos una base de datos para tu app! El siguiente comando creará una por ti al ejecutarlo en tu consola:
 
