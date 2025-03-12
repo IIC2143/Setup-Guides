@@ -31,5 +31,7 @@ Este comando debe entregar la versión 7.1.0.
 
 ## Actualizar un proyecto existente a Rails 7.1
 
-1. Si tienen un proyecto ya creado y necesitan actualizar la versión de Rails, deben actualizar el archivo `Gemfile` y cambiar la línea que comienza con `gem "rails"` por `gem "rails", "~> 7.1"`.
-2. Correr dentro del proyecto `bundle update rails` para actualizar la versión del proyecto.
+1. Si tienen un proyecto ya creado y necesitan actualizar la versión de Rails, deben actualizar el archivo `Gemfile` y cambiar la línea que comienza con `gem "rails"` por `gem "rails", "= 7.1.1"`.
+2. Correr dentro del proyecto `bundle` para actualizar las gemas del proyecto.
+
+Importante: La tarea funciona con rails `7.2.1`, pero no tendrán problemas ni incompatibilidades, así que no se preocupen :) 
