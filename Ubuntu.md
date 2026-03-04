@@ -50,11 +50,11 @@ sudo apt-get install postgresql postgresql-contrib
 
 ## 5. Ruby y Rails
 
-Instalar Ruby 3.3.6 e instalar Ruby on Rails 7.1.0
+Instalar Ruby 4.0.1 e instalar Ruby on Rails 8.1.2
 
 ```bash
-rvm install 3.3.6
-gem install rails -v 7.1.0
+rvm install 4.0.1
+gem install rails -v 8.1.2
 ```
 
 
@@ -64,6 +64,12 @@ Luego correr
 gem uninstall concurrent-ruby
 gem install concurrent-ruby -v 1.3.4
 ```
+
+Y setear la versión global de ruby a la 4.0.1.
+```bash
+rbenv global 4.0.1
+```
+
 
 ## 6. Node
 
