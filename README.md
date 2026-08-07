@@ -31,8 +31,12 @@ La versión navegable está publicada en GitHub Pages:
 - Setup de Ubuntu y WSL
 - Setup de macOS con RVM
 - Setup de macOS con rbenv
+- Git y Pull Requests
+- CI/CD y Render
 - RuboCop
 - Devise
 - Actualización de Rails
+- AI Starter Kit
+- Templates reutilizables
 
 El contenido fuente de la documentación vive en [`docs/`](./docs/).

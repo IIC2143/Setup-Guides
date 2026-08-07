@@ -6,12 +6,16 @@ Este sitio centraliza los pasos necesarios para preparar un ambiente de desarrol
 
 ## Guías disponibles
 
-- [Setup de Ubuntu y WSL](./Ubuntu.md)
-- [Setup de macOS con RVM](./MacOs.md)
-- [Setup de macOS con rbenv](./rbenv.md)
-- [RuboCop](./Rubocop.md)
-- [Devise](./Devise.md)
-- [Actualizar Rails](./actualizar-rails.md)
+- [Setup de Ubuntu y WSL](./guides/setup/ubuntu.md)
+- [Setup de macOS con RVM](./guides/setup/macos-rvm.md)
+- [Setup de macOS con rbenv](./guides/setup/macos-rbenv.md)
+- [Actualizar Rails](./guides/setup/actualizar-rails.md)
+- [RuboCop](./guides/tools/rubocop.md)
+- [Devise](./guides/tools/devise.md)
+- [Git y Pull Requests](./guides/workflow/git-pull-requests.md)
+- [CI/CD y Render](./guides/workflow/ci-cd-render.md)
+- [AI Starter Kit](./guides/ai-starter-kit/index.md)
+- [Templates reutilizables](./resources/ai-task-prompt-template.md)
 
 ## Recomendación
 

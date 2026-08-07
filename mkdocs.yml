@@ -20,13 +20,25 @@ theme:
 nav:
   - Inicio: index.md
   - Setup:
-      - Ubuntu y WSL: Ubuntu.md
-      - macOS con RVM: MacOs.md
-      - macOS con rbenv: rbenv.md
+      - Ubuntu y WSL: guides/setup/ubuntu.md
+      - macOS con RVM: guides/setup/macos-rvm.md
+      - macOS con rbenv: guides/setup/macos-rbenv.md
+      - Actualizar Rails: guides/setup/actualizar-rails.md
   - Herramientas:
-      - RuboCop: Rubocop.md
-      - Devise: Devise.md
-      - Actualizar Rails: actualizar-rails.md
+      - RuboCop: guides/tools/rubocop.md
+      - Devise: guides/tools/devise.md
+  - Workflow:
+      - Git y Pull Requests: guides/workflow/git-pull-requests.md
+      - CI/CD y Render: guides/workflow/ci-cd-render.md
+  - AI Starter Kit:
+      - Inicio: guides/ai-starter-kit/index.md
+      - Setup con IA: guides/ai-starter-kit/setup.md
+      - AI Tools: guides/ai-starter-kit/ai-tools.md
+      - Spec Workflow: guides/ai-starter-kit/spec-workflow.md
+  - Recursos:
+      - Prompt de tarea con IA: resources/ai-task-prompt-template.md
+      - Template de Pull Request: resources/pull-request-template.md
+      - Template de Skill: resources/skill-template.md
 
 markdown_extensions:
   - admonition
