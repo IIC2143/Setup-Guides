@@ -35,9 +35,9 @@ nav:
       - AI Tools: guides/ai-starter-kit/ai-tools.md
       - Spec Workflow: guides/ai-starter-kit/spec-workflow.md
   - Templates:
-      - Prompt de tarea con IA: resources/ai-task-prompt-template.md
-      - Pull Request: resources/pull-request-template.md
-      - Skill reutilizable: resources/skill-template.md
+      - Prompt de tarea con IA: templates/ai-task-prompt-template.md
+      - Pull Request: templates/pull-request-template.md
+      - Skill reutilizable: templates/skill-template.md
 
 markdown_extensions:
   - admonition

@@ -58,7 +58,7 @@ La primera regla sirve al equipo. La segunda mezcla ruta personal y secreto; deb
 
 Usa prompts largos solo para la tarea actual. Cuando una instrucción se repite en varias tareas, considera moverla a `AGENTS.md`.
 
-Template base: `docs/resources/ai-task-prompt-template.md`.
+Template base: `docs/templates/ai-task-prompt-template.md`.
 
 Un buen prompt no necesita ser largo, pero sí debe reducir ambigüedad. Si escribes "arregla el login", el agente tiene que adivinar qué falla, dónde mirar, qué no tocar y cómo validar. Si le das contexto, puede trabajar con menos vueltas y menos cambios fuera de alcance.
 
@@ -97,7 +97,7 @@ Si la tarea tiene más de un flujo, criterios poco claros o casos borde relevant
 
 Una skill es una receta reutilizable para una familia de tareas. Agrégala solo si el equipo la usará varias veces.
 
-Template base: `docs/resources/skill-template.md`.
+Template base: `docs/templates/skill-template.md`.
 
 Una skill no es solo un prompt guardado. Es un procedimiento que el agente puede cargar cuando reconoce una tarea repetible. Por eso debe explicar cuándo usarla, qué contexto leer, qué pasos seguir y qué revisar antes de cerrar.
 

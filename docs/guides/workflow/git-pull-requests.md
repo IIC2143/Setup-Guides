@@ -136,7 +136,7 @@ Antes de abrir PR, busca señales de ruido:
 
 ## Pull Request
 
-Usa `.github/pull_request_template.md`. La copia de referencia vive en `docs/resources/pull-request-template.md`.
+Usa `.github/pull_request_template.md`. La copia de referencia vive en `docs/templates/pull-request-template.md`.
 
 Un buen PR responde:
 
