@@ -1,0 +1,39 @@
+:root {
+  --md-primary-fg-color: #7f1024;
+  --md-primary-fg-color--light: #b51632;
+  --md-primary-fg-color--dark: #4d0714;
+  --md-accent-fg-color: #d8344f;
+}
+
+.md-header {
+  background: linear-gradient(90deg, #4d0714, #7f1024 48%, #b51632);
+}
+
+.md-tabs {
+  background-color: #5f0b1a;
+}
+
+.md-typeset h1,
+.md-typeset h2 {
+  color: #7f1024;
+}
+
+.md-typeset a {
+  color: #a3122b;
+}
+
+.md-typeset a:hover {
+  color: #d8344f;
+}
+
+.md-typeset code {
+  border-radius: .25rem;
+}
+
+.md-typeset pre > code {
+  border-left: .2rem solid #b51632;
+}
+
+.md-search__form {
+  background-color: rgba(255, 255, 255, .16);
+}

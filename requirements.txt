@@ -1,0 +1,2 @@
+mkdocs<2
+mkdocs-material<10

@@ -1,0 +1,39 @@
+site_name: Setup Guides
+site_description: Guias de instalacion y configuracion para proyectos Ruby on Rails.
+repo_url: https://github.com/IIC2143/Setup-Guides
+
+theme:
+  name: material
+  language: es
+  logo: assets/ruby-gem.svg
+  favicon: assets/ruby-gem.svg
+  palette:
+    - scheme: default
+      primary: custom
+      accent: red
+  features:
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - content.code.copy
+
+nav:
+  - Inicio: index.md
+  - Setup:
+      - Ubuntu y WSL: Ubuntu.md
+      - macOS con RVM: MacOs.md
+      - macOS con rbenv: rbenv.md
+  - Herramientas:
+      - RuboCop: Rubocop.md
+      - Devise: Devise.md
+      - Actualizar Rails: actualizar-rails.md
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+
+extra_css:
+  - stylesheets/extra.css
