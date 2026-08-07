@@ -175,12 +175,22 @@ Empieza con el modelo recomendado por la herramienta. Sube a un modelo más capa
 
 Regla práctica:
 
-| Caso | Tipo de modelo | Uso esperado |
+| Caso | Tipo de modelo | Ejemplo práctico |
 | --- | --- | --- |
-| Pregunta corta o cambio trivial | Económico, esfuerzo bajo | Respuestas rápidas, bajo costo |
-| Trabajo diario de código | Balanceado, esfuerzo medio | Buen equilibrio entre calidad, velocidad y costo |
-| Problema difícil o refactor grande | Avanzado, esfuerzo alto | Más razonamiento para decisiones complejas |
-| Mucho contexto | Contexto largo | Leer repos, trazas o documentos extensos |
+| Pregunta corta o cambio trivial | Económico, esfuerzo bajo. En Claude, piensa en Haiku. | "Explícame este error", "resume este README", "dime qué comando corre los tests". Sirve cuando necesitas velocidad y bajo costo, no una investigación profunda. |
+| Trabajo diario de código | Balanceado, esfuerzo medio. En Claude, piensa en Sonnet. | "Arregla este bug chico", "agrega una validación", "actualiza esta vista y el test cercano". Es la opción normal para tareas de curso con uno o pocos archivos. |
+| Problema difícil o refactor grande | Avanzado, esfuerzo alto. En Claude, piensa en Opus. | "Diseña una migración compleja", "revisa una arquitectura", "depura un fallo que cruza varios módulos". Úsalo cuando equivocarse saldría más caro que pagar un modelo mejor. |
+| Mucho contexto | Modelo con ventana de contexto suficiente. | "Lee estos logs largos", "compara varios documentos", "revisa un PR grande". Importa más que quepa bien el contexto que elegir el modelo más caro por defecto. |
+
+Si trabajas con Codex, la idea es parecida, pero los nombres cambian:
+
+| Necesidad | Modelo en Codex | Cuándo usarlo |
+| --- | --- | --- |
+| Rápido y barato | `gpt-5.6-luna` | Tareas claras y repetibles: resumir, clasificar, transformar texto o revisar algo muy acotado. |
+| Trabajo diario | `gpt-5.6-terra` | Bug fixes, cambios chicos de código, revisión de tests cercanos o tareas normales del curso. |
+| Más profundidad | `gpt-5.6-sol` | Problemas ambiguos, diseño de solución, refactors o revisiones donde importa más la calidad que la velocidad. |
+
+En Codex también puedes ajustar el esfuerzo de razonamiento: usa bajo para tareas claras, medio para trabajo normal y alto cuando necesita planificar o revisar varias alternativas. En CLI puedes elegir modelo con `codex --model gpt-5.6-terra` o `codex exec -m gpt-5.6-terra "..."`.
 
 No elijas por nombre solamente: revisa la documentación actual de la herramienta y elige según dificultad, contexto y costo. Para una tarea chica, un modelo robusto puede ser desperdicio; para una tarea ambigua o de arquitectura, un modelo barato puede salir caro si falla y hay que repetir.
 
