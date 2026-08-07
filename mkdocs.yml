@@ -34,10 +34,10 @@ nav:
       - Setup con IA: guides/ai-starter-kit/setup.md
       - AI Tools: guides/ai-starter-kit/ai-tools.md
       - Spec Workflow: guides/ai-starter-kit/spec-workflow.md
-  - Recursos:
+  - Templates:
       - Prompt de tarea con IA: resources/ai-task-prompt-template.md
-      - Template de Pull Request: resources/pull-request-template.md
-      - Template de Skill: resources/skill-template.md
+      - Pull Request: resources/pull-request-template.md
+      - Skill reutilizable: resources/skill-template.md
 
 markdown_extensions:
   - admonition

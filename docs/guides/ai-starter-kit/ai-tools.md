@@ -1,4 +1,4 @@
-# 01 - AI Tools
+# AI Tools
 
 Objetivo: usar IA con contexto suficiente, permisos mínimos y cambios revisables.
 

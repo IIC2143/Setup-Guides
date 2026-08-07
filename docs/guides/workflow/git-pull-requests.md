@@ -1,4 +1,4 @@
-# 03 - Git y Pull Requests
+# Git y Pull Requests
 
 Objetivo: entregar cambios pequeños, trazables y fáciles de revisar.
 

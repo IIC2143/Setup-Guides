@@ -1,4 +1,4 @@
-# 02 - Spec Workflow
+# Spec Workflow
 
 Objetivo: transformar una necesidad vaga en un cambio pequeño, revisable y validado.
 
