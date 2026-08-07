@@ -5,12 +5,12 @@
 <h1 align="center">Setup Guides</h1>
 
 <p align="center">
-  Guias de instalacion y configuracion para proyectos Ruby on Rails.
+  Guías de instalación y configuración para proyectos Ruby on Rails.
 </p>
 
 <p align="center">
   <a href="https://iic2143.github.io/Setup-Guides/">
-    <img alt="Abrir documentacion" src="https://img.shields.io/badge/Abrir%20documentacion-GitHub%20Pages-7f1024?style=for-the-badge&logo=ruby&logoColor=white">
+    <img alt="Abrir documentación" src="https://img.shields.io/badge/Abrir%20documentación-GitHub%20Pages-7f1024?style=for-the-badge&logo=ruby&logoColor=white">
   </a>
 </p>
 
@@ -20,9 +20,9 @@
   <img alt="Rails" src="https://img.shields.io/badge/Ruby%20on%20Rails-setup-d8344f?style=flat-square">
 </p>
 
-## Documentacion
+## Documentación
 
-La version navegable esta publicada en GitHub Pages:
+La versión navegable está publicada en GitHub Pages:
 
 [Abrir Setup Guides](https://iic2143.github.io/Setup-Guides/)
 
@@ -33,13 +33,6 @@ La version navegable esta publicada en GitHub Pages:
 - Setup de macOS con rbenv
 - RuboCop
 - Devise
-- Actualizacion de Rails
+- Actualización de Rails
 
-## Desarrollo local
-
-```bash
-pip install -r requirements.txt
-mkdocs serve
-```
-
-El contenido fuente de la documentacion vive en [`docs/`](./docs/).
+El contenido fuente de la documentación vive en [`docs/`](./docs/).

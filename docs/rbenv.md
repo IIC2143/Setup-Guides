@@ -1,5 +1,6 @@
 # Manual de Instalación
-Se recomienda a los usuarios de Mac M1 o M2, que esta instalacion se haga en un terminal de Rosetta.
+Se recomienda a los usuarios de Mac M1 o M2 hacer esta instalación en un terminal de Rosetta.
+
 ## 1. rbenv
 
 Primero verifica si tienes _Homebrew_ instalado ejecutando:
@@ -10,13 +11,13 @@ brew -v
 
 Si es que no lo tienes instalado, ejecuta:
 
-``` bash
+```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-## 2. Ruby Version Manager
+## 2. Configurar rbenv
 
-Luego instalermos _rbenv_. Para eso, ejecuta los siguientes comandos desde la consola:
+Luego instalaremos _rbenv_. Para eso, ejecuta los siguientes comandos desde la consola:
 
 ```bash
 brew install rbenv
@@ -24,9 +25,9 @@ rbenv init
 ```
 
 
-Con el primero comando instalamos rbenv que es el sistema que ocuparemos. Con el segundo dejamos por defecto rbenv para que funcione en el terminal o consola. Por ultimo, queda cerrar y abrir otra terminal.
+Con el primer comando instalamos `rbenv`, que es el sistema que usaremos. Con el segundo dejamos `rbenv` configurado para que funcione en el terminal o consola. Por último, cierra y abre otra terminal.
 
-Para verificar que _rbenv_ se instaló correctamente, reincia tu consola y corre:
+Para verificar que _rbenv_ se instaló correctamente, reinicia tu consola y corre:
 ```bash
 rbenv -v
 ```
@@ -41,7 +42,7 @@ brew install postgresql
 
 ## 4. Ruby y Rails
 
-Instala Ruby 3.3.6 y Ruby on Rails 7.1.0
+Instala Ruby 3.3.6 y Ruby on Rails 7.1.0.
 
 ```bash
 rbenv install 3.3.6
@@ -51,7 +52,7 @@ gem install rails -v 7.1.0
 
 ## 5. PostgreSQL: superuser
 
-Ahora lo último antes de iniciar el proyecto! Debemos crear un nuevo `superuser` de PostgreSQL. Para esto primero debemos iniciar un servicio de PostgreSQL, ejecutando el siguiente comando:
+Ahora viene el último paso antes de iniciar el proyecto: crear un nuevo `superuser` de PostgreSQL. Para esto, primero debemos iniciar el servicio de PostgreSQL ejecutando el siguiente comando:
 
 ```bash
 brew services start postgresql
@@ -63,7 +64,7 @@ Ahora ingresamos a la consola de PostgreSQL:
 psql postgres
 ```
 
-Luego creamos un nuevo usuario. Para mantener consistencia entre todos y para que nadie tenga problemas relacionados al método de autenticación por default que les viene con la instalación, **vamos a crear un usuario con el mismo nombre que el usuario de tu sistema** (acá tomaremos como ejemplo que mi usuario se llama myuser).
+Luego creamos un nuevo usuario. Para mantener consistencia entre todos y evitar problemas relacionados con el método de autenticación por defecto, **vamos a crear un usuario con el mismo nombre que el usuario de tu sistema**. En este ejemplo, mi usuario se llama `myuser`.
 
 Ahora, es posible que este usuario ya exista. Para verificar esto corre `\du` y revisa si ya está creado. En el caso de que no aparezca, ejecuta:
 
@@ -77,13 +78,13 @@ Para salir de la consola de postgres corre `\q`.
 
 ## 6. Node
 
-Ahora tenemos que instalar Node (un runetime de JavaScript): (las versiones más recientes de RoR necesitan Node).
+Ahora tenemos que instalar Node, un runtime de JavaScript. Las versiones más recientes de Rails necesitan Node.
 
 ```bash
 brew install node
 ```
 
-Reinicia tu consola y luego corre
+Reinicia tu consola y luego corre:
 
 ```bash
 npm -v
@@ -115,16 +116,16 @@ bundle install
 
 Ahora vamos a abrir el proyecto recién creado en nuestro editor favorito. Si tienes VS Code puedes correr `code .`.
 
-Ahora que ya tenemos los archivos del proyecto, necesitamos setear la configuración de la base de datos que ocuparemos. 
+Ahora que ya tenemos los archivos del proyecto, necesitamos configurar la base de datos que usaremos.
 
-Primero crea en la raiz de tu proyecto (directamente adentro de la carpeta `<nombre proyecto>`) un archivo llamado `.env`  y adentro escribe las credenciales del usuario que creaste en el paso 7:
+Primero crea en la raíz de tu proyecto (directamente dentro de la carpeta `<nombre proyecto>`) un archivo llamado `.env` y escribe las credenciales del usuario que creaste en el paso 7:
 
 ```env
 # no se usan comillas
 DB_USER=myuser
 DB_PASSWORD=mypassword
 ```
-Recuerda cambiar myuser y mypassword por tu usuario y contraseña!
+Recuerda cambiar `myuser` y `mypassword` por tu usuario y contraseña.
 
 ## 9. .gitignore
 
@@ -133,7 +134,7 @@ Para evitar subir tu archivo .env a GitHub, debes agregarlo a tu archivo .gitign
 ```bash
 echo ".env" >> .gitignore
 ```
-Tambien incluiremos la carpeta `node_modules` en el archivo `.gitignore`
+También incluiremos la carpeta `node_modules` en el archivo `.gitignore`:
 
 ```bash
 echo "node_modules" >> .gitignore
@@ -168,7 +169,7 @@ Recuerda reemplazar `<nombre proyecto>` por el nombre que elegiste para el proye
 
 ## 11. Crear base de datos
 
-Necesitamos una base de datos para tu app! El siguiente comando creará una por ti:
+Necesitamos una base de datos para tu app. El siguiente comando creará una por ti:
 
 ```bash
 rails db:create
@@ -182,4 +183,4 @@ Ahora utilizando tu consola, corre el servidor del proyecto con el siguiente com
 rails s
 ```
 
-Ahora que tienes el servidor corriendo, dirígete a http://localhost:3000/ y debería aparecernos el el logo de Ruby on Rails.
+Ahora que tienes el servidor corriendo, dirígete a http://localhost:3000/ y debería aparecer el logo de Ruby on Rails.

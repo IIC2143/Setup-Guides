@@ -4,13 +4,13 @@ Devise es una gema que nos permite agregar autenticación a nuestras aplicacione
 
 ## Instalación
 
-Pata instalar Devise en un proyecto de Rails, debemos agregar la gema a nuestro Gemfile de la siguiente manera:
+Para instalar Devise en un proyecto de Rails, debemos agregar la gema a nuestro Gemfile de la siguiente manera:
 
 ```ruby
 gem "devise"
 ```
 
-Luego ejecutar en la consola:
+Luego ejecutamos en la consola:
 
 ```bash
 bundle install
@@ -26,9 +26,9 @@ Para configurar Devise, debemos ejecutar el siguiente comando:
 rails generate devise:install
 ```
 
-Este comando nos creará un archivo de configuración en `config/initializers/devise.rb` y nos agregará una ruta en `config/routes.rb` para el controlador de Devise. Ademas, nos indicara una serie de pasos que debemos seguir para configurar Devise. A continuacion detallaremos un poco en esto, personalizando un poco la misma.
+Este comando creará un archivo de configuración en `config/initializers/devise.rb` y agregará una ruta en `config/routes.rb` para el controlador de Devise. Además, indicará una serie de pasos que debemos seguir para configurar Devise. A continuación detallaremos algunos de ellos y haremos una configuración personalizada.
 
-Lo primero que debemos hacer es agregar la siguiente linea en `config/environments/development.rb`:
+Lo primero que debemos hacer es agregar la siguiente línea en `config/environments/development.rb`:
 
 ```ruby
   ...
@@ -36,25 +36,25 @@ config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   ...
 ```
 
-No importa mucho el lugar donde se agregue, pero es importante que se agregue en el ambiente de desarrollo.
+La ubicación exacta no es crítica, pero es importante que se agregue en el ambiente de desarrollo.
 
-A continuacion, debemos ejecutar el siguiente comando:
+A continuación, debemos ejecutar el siguiente comando:
 
 ```bash
 rails generate devise:views
 ```
 
-El cual nos creará una serie de vistas en `app/views/devise` que nos permitirán personalizar la interfaz de usuario de Devise. Como Devise esta pensado en autentificar usuarios, las vistas que nos creará serán para el registro de usuarios, inicio de sesión, etc.
+Este comando creará una serie de vistas en `app/views/devise` que nos permitirán personalizar la interfaz de usuario de Devise. Como Devise está pensado para autenticar usuarios, las vistas creadas serán para registro, inicio de sesión, edición de cuenta, entre otras.
 
 ## Generación de modelos
 
-Ya teniendo el flujo de Devise configurado, podemos generar el modelo de usuario que queramos, ya que al final, un usuario no es mas que otra tabla o modelo en nuestra base de datos. Para esto, debemos ejecutar el siguiente comando:
+Ya teniendo el flujo de Devise configurado, podemos generar el modelo de usuario que queramos. Al final, un usuario es otra tabla o modelo en nuestra base de datos. Para esto, debemos ejecutar el siguiente comando:
 
 ```bash
 rails generate devise User
 ```
 
-Donde `User` es el nombre del modelo que queremos crear. Este comando nos creará el modelo respectivo en `app/models/user.rb` y nos creará una migración en `db/migrate` para crear la tabla `users` en nuestra base de datos. Pueden notar que esta migracion trae varios atributos por defecto, como `email`, `encrypted_password`, `reset_password_token`, entre otros. Mas adelante veremos como podemos agregar mas atributos a nuestro modelo de usuario.
+Donde `User` es el nombre del modelo que queremos crear. Este comando creará el modelo respectivo en `app/models/user.rb` y una migración en `db/migrate` para crear la tabla `users` en nuestra base de datos. Esta migración trae varios atributos por defecto, como `email`, `encrypted_password`, `reset_password_token`, entre otros. Más adelante veremos cómo agregar más atributos a nuestro modelo de usuario.
 
 ## Migración
 
@@ -66,7 +66,7 @@ rails db:migrate
 
 ## Vistas
 
-Ya teniendo el modelo creado, vamos a personalizar un poco el flujo de Devise. Para esto, vamos a agregar un par de elementos a la vista `app/views/layouts/application.html.erb`, para ello colocamos entre las etiquetas `<>` y `<%= yield %>` lo siguiente:
+Ya teniendo el modelo creado, vamos a personalizar un poco el flujo de Devise. Para esto, agregaremos algunos elementos a la vista `app/views/layouts/application.html.erb`. Dentro del `<body>`, antes de `<%= yield %>`, colocamos lo siguiente:
 
 ```html
   ...
@@ -96,17 +96,17 @@ Ya teniendo el modelo creado, vamos a personalizar un poco el flujo de Devise. P
   ...
 ```
 
-Esto nos permitirá mostrar un par de links en la parte superior de nuestra aplicación, para poder iniciar sesión, registrarse, editar el perfil y cerrar sesión, los cuales se mostraran dependiendo si el usuario esta autenticado o no. Devise nos entrega una serie de métodos que nos permiten saber si el usuario esta autenticado o no, y que nos permiten acceder a la información del usuario autenticado. Estos métodos son:
+Esto nos permitirá mostrar enlaces en la parte superior de nuestra aplicación para iniciar sesión, registrarse, editar el perfil y cerrar sesión. Estos enlaces se mostrarán dependiendo de si el usuario está autenticado o no. Devise nos entrega una serie de métodos para saber si el usuario está autenticado y acceder a su información. Estos métodos son:
 
-- `user_signed_in?`: Devuelve `true` si el usuario esta autenticado, `false` en caso contrario.
+- `user_signed_in?`: Devuelve `true` si el usuario está autenticado, `false` en caso contrario.
 - `current_user`: Devuelve el usuario autenticado.
 - `user_session`: Devuelve la sesión del usuario autenticado.
 
-Vale decir, que si nuestro modelo se llamara de otra forma, por ejemplo `Person`, los métodos serían `person_signed_in?`, `current_person` y `person_session`. Recomendamos fuertemente que el nombre del modelo sea `User`, ya que es el nombre por defecto que utiliza Devise.
+Cabe destacar que, si nuestro modelo se llamara de otra forma, por ejemplo `Person`, los métodos serían `person_signed_in?`, `current_person` y `person_session`. Recomendamos usar el nombre `User`, ya que es el nombre por defecto que utiliza Devise.
 
 ## Turbo Failure App
 
-Debido a como funciona `rails`, debemos agregar una serie se pasos extra para que Devise funcione correctamente. Para esto, debemos agregar lo siguiente al inicio de `config/initializers/devise.rb`:
+Debido a cómo funciona Rails con Turbo, debemos agregar algunos pasos extra para que Devise funcione correctamente. Para esto, agregamos lo siguiente al inicio de `config/initializers/devise.rb`:
 
 ```ruby
 # frozen_string_literal: true
@@ -131,7 +131,7 @@ Devise.setup do |config|
 ...
 
 ```
-Luego, en el mismo archivo cerca de la linea 88, colocar:
+Luego, en el mismo archivo, cerca de la línea 88, colocamos:
 
 ```ruby
   ...
@@ -140,7 +140,7 @@ Luego, en el mismo archivo cerca de la linea 88, colocar:
 ```
 
   
-Y al final, justo antes de la seccion `==> Hotwire/Turbo configuration`, agregar:
+Y al final, justo antes de la sección `==> Hotwire/Turbo configuration`, agregamos:
 
 ```ruby
   ...
@@ -151,17 +151,17 @@ Y al final, justo antes de la seccion `==> Hotwire/Turbo configuration`, agregar
 end
 ```
 
-Con esto, ya tenemos Devise funcionando correctamente con Turbo. Puedes reiniciar (o solo iniciar) el servidor de rails y probar el flujo de autenticación.
+Con esto, ya tenemos Devise funcionando correctamente con Turbo. Puedes reiniciar (o iniciar) el servidor de Rails y probar el flujo de autenticación.
 
 ## Atributos adicionales
 
-Si queremos agregar atributos adicionales a nuestro modelo de usuario, debemos generar una nueva migracion. Una migracion es un archivo que nos permite modificar la estructura de una tabla en nuestra base de datos. Para generarla, debemos ejecutar el siguiente comando:
+Si queremos agregar atributos adicionales a nuestro modelo de usuario, debemos generar una nueva migración. Una migración es un archivo que permite modificar la estructura de una tabla en nuestra base de datos. Para generarla, ejecutamos el siguiente comando:
 
 ```bash
 rails generate migration AddNameToUsers
 ```
 
-En este caso, queremos agregar el atributo `name` a nuestro modelo, por eso, el nombre de la migracion es `AddNameToUsers`. Luego, debemos abrir el archivo que se nos creó en `db/migrate` y agregar lo siguiente:
+En este caso queremos agregar el atributo `name` a nuestro modelo, por eso el nombre de la migración es `AddNameToUsers`. Luego, debemos abrir el archivo creado en `db/migrate` y agregar lo siguiente:
 
 ```ruby
 class AddNameToUsers < ActiveRecord::Migration[7.0]
@@ -179,7 +179,7 @@ rails db:migrate
 
 ## Controlador
 
-Por último, debemos agregar un par de métodos al controlador de usuarios. Para esto, primero debemos generarlos con el siguiente comando:
+Por último, debemos agregar algunos métodos al controlador de usuarios. Para esto, primero generamos los controladores con el siguiente comando:
 
 ```bash
 rails generate devise:controllers users
@@ -204,7 +204,7 @@ Por:
 
 ## Permitir atributos
 
-Como el atributo `name` no viene por defecto en el modelo de usuario, debemos permitir que este atributo sea enviado desde el formulario de registro. Para esto, en `app/controllers/users/registrations_controller.rb` debemos descomentar las lineas que señalan:
+Como el atributo `name` no viene por defecto en el modelo de usuario, debemos permitir que este atributo sea enviado desde el formulario de registro. Para esto, en `app/controllers/users/registrations_controller.rb` debemos descomentar las siguientes líneas:
 
 ```ruby
   ...
@@ -225,7 +225,7 @@ Como el atributo `name` no viene por defecto en el modelo de usuario, debemos pe
   end
 ```
 
-Y reemplazar `:attribute` por `:name`, si fueran varios atributos, por ejemplo, `:username`, `:description`, etc, se deberían separar por comas, quedando de la siguiente forma:
+Y reemplazar `:attribute` por `:name`. Si fueran varios atributos, por ejemplo `:username`, `:description`, etc., se deberían separar por comas, quedando de la siguiente forma:
 
 ```ruby
   def configure_sign_up_params
@@ -240,7 +240,7 @@ Y reemplazar `:attribute` por `:name`, si fueran varios atributos, por ejemplo, 
 
 ## Formularios
 
-Finalmente, debemos agregar el campo de nuestros nuevos atributos en las vistas. Para esto debemos abrir `app/views/devise/registrations/new.html.erb` y agregar lo siguiente entre los campos de `:password_confirmation` y `:submit`:
+Finalmente, debemos agregar el campo de nuestros nuevos atributos en las vistas. Para esto, abrimos `app/views/devise/registrations/new.html.erb` y agregamos lo siguiente entre los campos de `:password_confirmation` y `:submit`:
 
 ```html
   ...
@@ -253,7 +253,7 @@ Finalmente, debemos agregar el campo de nuestros nuevos atributos en las vistas.
 
 Repetimos lo mismo en `app/views/devise/registrations/edit.html.erb`.
 
-Tambien, en `app/views/layouts/application.html.erb` editamos el bloque agregado anteriormente dejandolo de la siguiente forma:
+También, en `app/views/layouts/application.html.erb`, editamos el bloque agregado anteriormente y lo dejamos de la siguiente forma:
 
 ```html
   ...
@@ -268,4 +268,4 @@ Es decir, agregamos `current_user.name` para mostrar el nombre del usuario auten
 
 ## Prueba
 
-Para probar que todo funciona correctamente, debemos reiniciar el servidor de rails y probar el flujo de registro, iniciar sesión, editar perfil y cerrar sesión. Si todo funciona correctamente, las vistas deberían cambiar las opciones de Login, Register, Logout y Edit, ademas de mostrar el nombre del usuario autenticado.
+Para probar que todo funciona correctamente, debemos reiniciar el servidor de Rails y probar el flujo de registro, inicio de sesión, edición de perfil y cierre de sesión. Si todo funciona correctamente, las vistas deberían cambiar las opciones de Login, Register, Logout y Edit, además de mostrar el nombre del usuario autenticado.

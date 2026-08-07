@@ -1,7 +1,8 @@
 # Manual de Instalación
-Se recomienda a los usuarios de Mac M1 o M2, que esta instalacion se haga en un terminal de Rosetta.
+Se recomienda a los usuarios de Mac M1 o M2 hacer esta instalación en un terminal de Rosetta.
 
-Para mac se tienen 2 opciones, se puede seguir esta guia que generalmente trae varios problemas a los sistemas operativos mas nuevos o ocupar rbenv. Se tiene una guia tambien de esto en los archivos del setup
+Para macOS existen dos opciones: seguir esta guía, que suele traer problemas en los sistemas operativos más nuevos, o usar `rbenv`. También hay una guía de `rbenv` en este sitio.
+
 ## 1. Homebrew
 
 Primero verifica si tienes _Homebrew_ instalado ejecutando:
@@ -18,7 +19,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 ## 2. Ruby Version Manager
 
-Luego instalermos _Ruby Version Manager_, también conocido como _rvm_. Para eso, ejecuta los siguientes comandos desde la consola:
+Luego instalaremos _Ruby Version Manager_, también conocido como _rvm_. Para eso, ejecuta los siguientes comandos desde la consola:
 
 ```bash
 brew install gnupg2
@@ -26,9 +27,9 @@ gpg --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D695
 curl -sSL https://get.rvm.io | bash -s stable
 ```
 
-Con el primero comando instalamos GNU Privacy Guard, que es una herramienta de cifrado y firmas digitales. Con el segundo comando instalamos una llave que se utiliza (_automágicamente_) para verificar el paquete a instalar. Con el tercero comando instalamos _rvm_.
+Con el primer comando instalamos GNU Privacy Guard, una herramienta de cifrado y firmas digitales. Con el segundo comando instalamos una llave que se utiliza (_automágicamente_) para verificar el paquete a instalar. Con el tercer comando instalamos _rvm_.
 
-Para verificar que _rvm_ se instaló correctamente, reincia tu consola y corre:
+Para verificar que _rvm_ se instaló correctamente, reinicia tu consola y corre:
 ```bash
 rvm -v
 ```
@@ -43,29 +44,28 @@ brew install postgresql
 
 ## 4. Ruby y Rails
 
-Instalar Ruby 4.0.1 e instalar Ruby on Rails 8.1.2
+Instala Ruby 4.0.1 y Ruby on Rails 8.1.2.
 
 ```bash
 rvm install 4.0.1
 gem install rails -v 8.1.2
 ```
 
-
-Luego correr 
+Luego correr:
 
 ```bash
 gem uninstall concurrent-ruby
 gem install concurrent-ruby -v 1.3.4
 ```
 
-Y setear la versión global de ruby a la 4.0.1.
+Y establecer la versión global de Ruby en 4.0.1.
 ```bash
 rbenv global 4.0.1
 ```
 
 ## 5. PostgreSQL: superuser
 
-Ahora lo último antes de iniciar el proyecto! Debemos crear un nuevo `superuser` de PostgreSQL. Para esto primero debemos iniciar un servicio de PostgreSQL, ejecutando el siguiente comando:
+Ahora viene el último paso antes de iniciar el proyecto: crear un nuevo `superuser` de PostgreSQL. Para esto, primero debemos iniciar el servicio de PostgreSQL ejecutando el siguiente comando:
 
 ```bash
 brew services start postgresql
@@ -77,7 +77,7 @@ Ahora ingresamos a la consola de PostgreSQL:
 psql postgres
 ```
 
-Luego creamos un nuevo usuario. Para mantener consistencia entre todos y para que nadie tenga problemas relacionados al método de autenticación por default que les viene con la instalación, **vamos a crear un usuario con el mismo nombre que el usuario de tu sistema** (acá tomaremos como ejemplo que mi usuario se llama myuser).
+Luego creamos un nuevo usuario. Para mantener consistencia entre todos y evitar problemas relacionados con el método de autenticación por defecto, **vamos a crear un usuario con el mismo nombre que el usuario de tu sistema**. En este ejemplo, mi usuario se llama `myuser`.
 
 Ahora, es posible que este usuario ya exista. Para verificar esto corre `\du` y revisa si ya está creado. En el caso de que no aparezca, ejecuta:
 
@@ -91,13 +91,13 @@ Para salir de la consola de postgres corre `\q`.
 
 ## 6. Node
 
-Ahora tenemos que instalar Node (un runetime de JavaScript): (las versiones más recientes de RoR necesitan Node).
+Ahora tenemos que instalar Node, un runtime de JavaScript. Las versiones más recientes de Rails necesitan Node.
 
 ```bash
 brew install node
 ```
 
-Reinicia tu consola y luego corre
+Reinicia tu consola y luego corre:
 
 ```bash
 npm -v
@@ -129,16 +129,16 @@ bundle install
 
 Ahora vamos a abrir el proyecto recién creado en nuestro editor favorito. Si tienes VS Code puedes correr `code .`.
 
-Ahora que ya tenemos los archivos del proyecto, necesitamos setear la configuración de la base de datos que ocuparemos. 
+Ahora que ya tenemos los archivos del proyecto, necesitamos configurar la base de datos que usaremos.
 
-Primero crea en la raiz de tu proyecto (directamente adentro de la carpeta `<nombre proyecto>`) un archivo llamado `.env`  y adentro escribe las credenciales del usuario que creaste en el paso 7:
+Primero crea en la raíz de tu proyecto (directamente dentro de la carpeta `<nombre proyecto>`) un archivo llamado `.env` y escribe las credenciales del usuario que creaste en el paso 7:
 
 ```env
 # no se usan comillas
 DB_USER=myuser
 DB_PASSWORD=mypassword
 ```
-Recuerda cambiar myuser y mypassword por tu usuario y contraseña!
+Recuerda cambiar `myuser` y `mypassword` por tu usuario y contraseña.
 
 ## 9. .gitignore
 
@@ -147,7 +147,7 @@ Para evitar subir tu archivo .env a GitHub, debes agregarlo a tu archivo .gitign
 ```bash
 echo ".env" >> .gitignore
 ```
-Tambien incluiremos la carpeta `node_modules` en el archivo `.gitignore`
+También incluiremos la carpeta `node_modules` en el archivo `.gitignore`:
 
 ```bash
 echo "node_modules" >> .gitignore
@@ -182,7 +182,7 @@ Recuerda reemplazar `<nombre proyecto>` por el nombre que elegiste para el proye
 
 ## 11. Crear base de datos
 
-Necesitamos una base de datos para tu app! El siguiente comando creará una por ti al ejecutarlo en tu consola:
+Necesitamos una base de datos para tu app. El siguiente comando creará una por ti al ejecutarlo en tu consola:
 
 ```bash
 rails db:create
@@ -196,4 +196,4 @@ Ahora utilizando tu consola, corre el servidor del proyecto con el siguiente com
 rails s
 ```
 
-Ahora que tienes el servidor corriendo, dirígete a http://localhost:3000/ y debería aparecernos el el logo de Ruby on Rails.
+Ahora que tienes el servidor corriendo, dirígete a http://localhost:3000/ y debería aparecer el logo de Ruby on Rails.

@@ -1,16 +1,16 @@
 ## ¿Qué es RuboCop?
 
-RuboCop es un analizador de código estático para Ruby (también conocido como _linter_) y _formatter_ de código. Fuera de la caja, hará cumplir muchas de las pautas descritas en la Guía de estilo de Ruby de la comunidad. Además de informar los problemas descubiertos en su código, RuboCop también puede solucionar automáticamente muchos de ellos.
+RuboCop es un analizador de código estático para Ruby (también conocido como _linter_) y _formatter_ de código. De forma predeterminada, aplica muchas de las pautas descritas en la Guía de estilo de Ruby de la comunidad. Además de informar los problemas encontrados en su código, RuboCop también puede solucionar automáticamente muchos de ellos.
 
 RuboCop es extremadamente flexible y la mayoría de los aspectos de su comportamiento se pueden modificar mediante varias opciones de configuración.
 
 ## ¿Cómo integrarlo en su proyecto?
 
-Primero que todo es necesario instalarlo. Para esto agreguen la siguiente línea en su _Gemfile_:
+Primero es necesario instalarlo. Para esto, agreguen la siguiente línea en su _Gemfile_:
 ```ruby
 gem 'rubocop', require: false
 ```
-y luego ejecuten:
+Y luego ejecuten:
 ```bash
 bundle install
 ```
@@ -20,21 +20,21 @@ Otra alternativa es simplemente ejecutar:
 gem install rubocop
 ```
 
-Por último, deben crear, en la raiz de su proyecto, un [archivo de configuración](https://docs.rubocop.org/rubocop/1.20/configuration.html) donde se definan las reglas a utilizar.
+Por último, deben crear en la raíz de su proyecto un [archivo de configuración](https://docs.rubocop.org/rubocop/1.20/configuration.html) donde se definan las reglas a utilizar.
 
-Si no saben cómo hacerlo, no se preocupen, acá les dejamos una configuración sugerida para el proyecto. Recomendamos investigar de todas formas configuraciones para que vean cuales se ajustan a su proyecto:
+Si no saben cómo hacerlo, no se preocupen: aquí dejamos una configuración sugerida para el proyecto. Recomendamos investigar otras configuraciones para ver cuáles se ajustan mejor a su proyecto:
 
 ### Configuración sugerida
 
-En la raiz del proyecto deberán crear un archivo llamado `.rubocop.yml` y agregar lo siguiente:
+En la raíz del proyecto deberán crear un archivo llamado `.rubocop.yml` y agregar lo siguiente:
 
 ```yml
 #  Este es un archivo de rubocop simple donde se deshabilitan
-# muchas de las reglas que suele checkear rubocop, para dejar
+# muchas de las reglas que suele revisar RuboCop, para dejar
 # una base simple y se tengan que preocupar solo de ciertos "cops"
 
 #  Al final de este archivo, si encuentras que te ayudaría a tener
-# un código mas ordenado, puedes añadir todos los cops que creas convenientes.
+# un código más ordenado, puedes añadir todos los cops que creas convenientes.
 
 AllCops:
   DisabledByDefault: true
@@ -139,7 +139,7 @@ Lint/ShadowedArgument:
 ### Añade aquí todos los Cops que quieras:
 ```
 
-[Aquí](https://nextlinklabs.com/insights/our-rubocop-configuration-for-rails-development-projects) una buena guía de Rubocop si quieren seguir investigando 😄 
+[Aquí](https://nextlinklabs.com/insights/our-rubocop-configuration-for-rails-development-projects) hay una buena guía de RuboCop si quieren seguir investigando.
 
 ## ¿Cómo ejecutar RuboCop?
 
@@ -149,7 +149,7 @@ La ejecución de RuboCop sin argumentos comprobará todos los archivos de Ruby e
 rubocop
 ```
 
-También pueden ejecutar RuboCop en un modo de autocorrección, donde intentará solucionar automáticamente los problemas que encontró en su código:
+También pueden ejecutar RuboCop en modo de autocorrección, donde intentará solucionar automáticamente los problemas encontrados en su código:
 
 ```bash
 rubocop -a

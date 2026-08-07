@@ -2,21 +2,21 @@
 
 ## 1. Instalar WSL
 
-**¿Estás usando Windows?** 
+**¿Estás usando Windows?**
 
 Para que no tengas problemas en este y próximos cursos deberás descargar [WSL o WSL2](https://es.wikipedia.org/wiki/Windows_Subsystem_for_Linux) (Windows Subsystem for Linux). Para esto existen diferentes guías:
 * [Guía oficial](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
-* [Tutorial de Youtube](https://www.youtube.com/watch?v=n-J9438Mv-s)
+* [Tutorial de YouTube](https://www.youtube.com/watch?v=n-J9438Mv-s)
 
 La diferencia entre WSL y WSL2 es la compatibilidad con la versión de Windows.
 
-Luego, les recomendamos que instalen, desde Microsoft Store, algún lanzamiento de Ubuntu desde la versión 18.04 para utilizarlo como consola, [esta por ejemplo](https://www.microsoft.com/store/productId/9N6SVWS3RX71).
+Luego, recomendamos instalar desde Microsoft Store alguna versión de Ubuntu desde la 18.04 en adelante, [por ejemplo esta](https://www.microsoft.com/store/productId/9N6SVWS3RX71).
 
 De ahora en adelante, al referirnos a "la consola" o "el terminal", aquellos utilizando Windows deben utilizar la consola de Ubuntu.
 
 ## 2. Dependencias
 
-Instalar las dependencias necesarias. Para eso, desde la consola, se deben ejecutar los siguientes comandos:
+Instala las dependencias necesarias. Para eso, desde la consola, ejecuta los siguientes comandos:
 
 ```bash
 sudo apt-get update
@@ -25,7 +25,7 @@ sudo apt-get install build-essential patch liblzma-dev libpq-dev
 
 ## 3. Ruby Version Manager
 
-Instalar _Ruby Version Manager_, también conocido como _rvm_. Para eso, ejecutar los siguientes comandos desde la consola:
+Instala _Ruby Version Manager_, también conocido como _rvm_. Para eso, ejecuta los siguientes comandos desde la consola:
 
 ```bash
 sudo apt install gnupg2
@@ -33,16 +33,16 @@ gpg --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D695
 curl -sSL https://get.rvm.io | bash -s stable
 ```
 
-Con el primero comando instalamos GNU Privacy Guard, que es una herramienta de cifrado y firmas digitales. Con el segundo comando instalamos una llave que se utiliza (_automágicamente_) para verificar el paquete a instalar. Con el segundo comando instalamos _rvm_.
+Con el primer comando instalamos GNU Privacy Guard, una herramienta de cifrado y firmas digitales. Con el segundo comando instalamos una llave que se utiliza (_automágicamente_) para verificar el paquete a instalar. Con el tercer comando instalamos _rvm_.
 
 Para verificar que _rvm_ se instaló correctamente, **reinicia tu consola** y corre:
 ```bash
 rvm -v
 ```
 
-## 4. PostgresSQL
+## 4. PostgreSQL
 
-Instalar PostgreSQL en tu máquina. Para eso, ejecutaremos el siguiente comando:
+Instala PostgreSQL en tu máquina. Para eso, ejecuta el siguiente comando:
 
 ```bash
 sudo apt-get install postgresql postgresql-contrib
@@ -50,36 +50,34 @@ sudo apt-get install postgresql postgresql-contrib
 
 ## 5. Ruby y Rails
 
-Instalar Ruby 4.0.1 e instalar Ruby on Rails 8.1.2
+Instala Ruby 4.0.1 y Ruby on Rails 8.1.2.
 
 ```bash
 rvm install 4.0.1
 gem install rails -v 8.1.2
 ```
 
-
-Luego correr 
+Luego correr:
 
 ```bash
 gem uninstall concurrent-ruby
 gem install concurrent-ruby -v 1.3.4
 ```
 
-Y setear la versión global de ruby a la 4.0.1.
+Y establecer la versión global de Ruby en 4.0.1.
 ```bash
 rbenv global 4.0.1
 ```
 
-
 ## 6. Node
 
-Ahora tenemos que instalar Node (un [_runetime_](https://en.wikipedia.org/wiki/Runtime_library) de JavaScript), para lo que utilizaremos _Node Version Manager_ o _nvm_ (las versiones más recientes de RoR necesitan Node).
+Ahora tenemos que instalar Node (un [_runtime_](https://en.wikipedia.org/wiki/Runtime_library) de JavaScript), para lo que utilizaremos _Node Version Manager_ o _nvm_ (las versiones más recientes de Rails necesitan Node).
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 ```
 
-Reinicia tu consola y luego corre
+Reinicia tu consola y luego corre:
 
 ```bash
 nvm install --lts
@@ -88,7 +86,7 @@ nvm install --lts
 
 ## 7. PostgreSQL: superuser
 
-Ahora lo último antes de iniciar el proyecto! Debemos crear un nuevo `superuser` de PostgreSQL. Para esto primero debemos iniciar un servicio de PostgreSQL, ejecutando el siguiente comando:
+Ahora viene el último paso antes de iniciar el proyecto: crear un nuevo `superuser` de PostgreSQL. Para esto, primero debemos iniciar el servicio de PostgreSQL ejecutando el siguiente comando:
 
 ```bash
 sudo service postgresql start
@@ -100,7 +98,7 @@ Ahora ingresamos a la consola de PostgreSQL como usuario `postgres` (que viene c
 sudo -u postgres psql
 ```
 
-Luego, creamos un nuevo usuario. Para mantener consistencia entre todos y para que nadie tenga problemas relacionados al método de autenticación por default que les viene con la instalación, **vamos a crear un usuario con el mismo nombre que el usuario de tu sistema** (acá tomaremos como ejemplo que mi usuario se llama myuser):
+Luego, creamos un nuevo usuario. Para mantener consistencia entre todos y evitar problemas relacionados con el método de autenticación por defecto, **vamos a crear un usuario con el mismo nombre que el usuario de tu sistema**. En este ejemplo, mi usuario se llama `myuser`:
 
 ```bash
 CREATE USER myuser WITH SUPERUSER PASSWORD 'mypassword';
@@ -136,16 +134,16 @@ bundle install
 
 Ahora vamos a abrir el proyecto recién creado en nuestro editor favorito. Si tienes VS Code puedes correr `code .`.
 
-Ahora que ya tenemos los archivos del proyecto, necesitamos setear la configuración de la base de datos que ocuparemos. 
+Ahora que ya tenemos los archivos del proyecto, necesitamos configurar la base de datos que usaremos.
 
-Primero crea en la raiz de tu proyecto (directamente adentro de la carpeta `<nombre proyecto>`) un archivo llamado `.env`  y adentro escribe las credenciales del usuario que creaste en el paso 7:
+Primero crea en la raíz de tu proyecto (directamente dentro de la carpeta `<nombre proyecto>`) un archivo llamado `.env` y escribe las credenciales del usuario que creaste en el paso 7:
 
 ```env
 # no se usan comillas
 DB_USER=myuser
 DB_PASSWORD=mypassword
 ```
-Recuerda cambiar myuser y mypassword por tu usuario y contraseña!
+Recuerda cambiar `myuser` y `mypassword` por tu usuario y contraseña.
 
 ## 10. .gitignore
 
@@ -154,7 +152,7 @@ Para evitar subir tu archivo .env a GitHub, debes agregarlo a tu archivo .gitign
 ```bash
 echo ".env" >> .gitignore
 ```
-Tambien incluiremos la carpeta `node_modules` en el archivo `.gitignore`
+También incluiremos la carpeta `node_modules` en el archivo `.gitignore`:
 
 ```bash
 echo "node_modules" >> .gitignore
@@ -189,9 +187,7 @@ Recuerda reemplazar `<nombre proyecto>` por el nombre que elegiste para el proye
 
 ## 12. Crear base de datos
 
-
-
-Necesitamos una base de datos para tu app! El siguiente comando creará una por ti al ejecutarlo en tu consola:
+Necesitamos una base de datos para tu app. El siguiente comando creará una por ti al ejecutarlo en tu consola:
 
 ```bash
 rails db:create
@@ -205,4 +201,4 @@ Ahora utilizando tu consola, corre el servidor del proyecto con el siguiente com
 rails server
 ```
 
-Ahora que tienes el servidor corriendo, dirígete a http://localhost:3000/ y debería aparecernos el logo de Ruby on Rails.
+Ahora que tienes el servidor corriendo, dirígete a http://localhost:3000/ y debería aparecer el logo de Ruby on Rails.
