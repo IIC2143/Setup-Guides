@@ -17,4 +17,3 @@ Materiales base para trabajar tareas del curso con apoyo de IA sin perder trazab
 ## Workflow relacionado
 
 - [Git y Pull Requests](../workflow/git-pull-requests.md)
-- [CI/CD y Render](../workflow/ci-cd-render.md)

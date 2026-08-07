@@ -29,7 +29,6 @@ nav:
       - Devise: guides/tools/devise.md
   - Workflow:
       - Git y Pull Requests: guides/workflow/git-pull-requests.md
-      - CI/CD y Render: guides/workflow/ci-cd-render.md
   - AI Starter Kit:
       - Inicio: guides/ai-starter-kit/index.md
       - Setup con IA: guides/ai-starter-kit/setup.md

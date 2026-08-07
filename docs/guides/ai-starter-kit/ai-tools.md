@@ -143,9 +143,9 @@ Antes de versionar una skill, pruébala como prompt normal dos o tres veces. Si 
 
 ## MCP y permisos
 
-MCP conecta el agente con herramientas externas: GitHub, Notion, Render, bases de datos, navegadores o APIs internas.
+MCP conecta el agente con herramientas externas: GitHub, Notion, bases de datos, navegadores o APIs internas.
 
-Un MCP amplía lo que el agente puede hacer. Ya no solo lee el repo: puede consultar servicios, abrir issues, revisar logs, crear deploys o interactuar con datos. Por eso la regla no es "conectar todo", sino conectar solo lo que la tarea necesita.
+Un MCP amplía lo que el agente puede hacer. Ya no solo lee el repo: puede consultar servicios, abrir issues, revisar información externa o interactuar con datos. Por eso la regla no es "conectar todo", sino conectar solo lo que la tarea necesita.
 
 Regla mínima:
 
@@ -158,53 +158,11 @@ Referencia de riesgo:
 
 | Acción | Riesgo | Qué hacer |
 | --- | --- | --- |
-| Listar servicios, leer logs o ver estado de un deploy | Bajo | Permitido si ayuda a diagnosticar. |
-| Crear un issue, comentar un PR o disparar un deploy | Medio | Confirmar antes de ejecutar. |
+| Leer información externa o listar recursos | Bajo | Permitido si ayuda a diagnosticar. |
+| Crear un issue, comentar un PR o modificar un recurso externo | Medio | Confirmar antes de ejecutar. |
 | Cambiar variables de entorno, modificar permisos o borrar recursos | Alto | Evitar salvo instrucción explícita del equipo/profesor. |
 
-Ejemplo práctico: Render MCP permite listar servicios, revisar logs, disparar deploys o consultar métricas desde el agente.
-
-Codex con OAuth:
-
-```bash
-codex mcp add render --url https://mcp.render.com/mcp --oauth-client-id codex
-```
-
-Claude Code con OAuth:
-
-```bash
-claude mcp add --transport http --client-id claude render https://mcp.render.com/mcp
-```
-
-Prompt de prueba:
-
-```text
-Lista mis servicios de Render y dime cuál fue el último deploy del servicio web. No modifiques nada.
-```
-
-OpenCode con API key local, en `opencode.json`:
-
-```json
-{
-  "$schema": "https://opencode.ai/config.json",
-  "mcp": {
-    "servers": {
-      "render": {
-        "type": "remote",
-        "url": "https://mcp.render.com/mcp",
-        "oauth": false,
-        "headers": {
-          "Authorization": "Bearer {env:RENDER_API_KEY}"
-        }
-      }
-    }
-  }
-}
-```
-
-Guarda `RENDER_API_KEY` como variable de entorno, no en el repo.
-
-Si un agente pide permisos amplios para una tarea simple, baja el alcance. Para revisar un fallo de deploy, normalmente basta leer logs; no necesita modificar variables ni redeployar automáticamente.
+Si un agente pide permisos amplios para una tarea simple, baja el alcance. Para diagnosticar un problema, normalmente basta leer información; no necesita modificar variables ni ejecutar acciones externas automáticamente.
 
 ## Modelo y costo
 
@@ -263,20 +221,6 @@ Por qué funciona:
 - Hace visible qué archivos se tocaron.
 - Exige evidencia de validación.
 
-## Checklist de uso
-
-- [ ] `AGENTS.md` tiene reglas comunes del repo.
-- [ ] El prompt usa el template cuando la tarea no es trivial.
-- [ ] Pediste lectura antes de editar.
-- [ ] El agente dijo qué archivos tocaría.
-- [ ] La herramienta tiene solo los permisos necesarios.
-- [ ] Los MCP conectados son relevantes para la tarea.
-- [ ] El modelo elegido calza con dificultad, contexto y costo.
-- [ ] Revisaste el diff antes de cerrar.
-- [ ] Corriste o declaraste el check mínimo correspondiente.
-- [ ] El agente entrega diff, checks y riesgos antes de cerrar.
-- [ ] No se agregaron secretos ni configuración personal.
-
 ## Fuentes
 
 - Codex AGENTS.md: <https://learn.chatgpt.com/docs/agent-configuration/agents-md>
@@ -289,4 +233,3 @@ Por qué funciona:
 - Claude Code skills: <https://code.claude.com/docs/en/slash-commands>
 - Claude models: <https://code.claude.com/docs/en/model-config>
 - OpenAI model guidance: <https://developers.openai.com/api/docs/guides/latest-model>
-- Render MCP: <https://render.com/docs/mcp-server>

@@ -244,17 +244,6 @@ Comprueba:
 git status
 ```
 
-## 8. Checklist de entrega
-
-- [ ] Fork creado.
-- [ ] Repositorio clonado.
-- [ ] Entorno Linux, macOS o WSL listo.
-- [ ] GitHub Education activo.
-- [ ] Copilot CLI, OpenCode, Codex o Claude instalado.
-- [ ] Al menos una herramienta autenticada.
-- [ ] La herramienta elegida lee instrucciones del repo (`AGENTS.md`, `CLAUDE.md` o `.github/copilot-instructions.md`, según corresponda).
-- [ ] Prompt de prueba ejecutado sin editar archivos.
-
 ## Fuentes
 
 - GitHub Docs: <https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/enable-copilot/set-up-for-students>

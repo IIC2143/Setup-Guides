@@ -46,7 +46,7 @@ Ejemplos buenos:
 - `feature/task-filter`
 - `fix/login-email-spaces`
 - `docs/ai-tools-guide`
-- `chore/render-blueprint-name`
+- `chore/update-deps`
 
 Ejemplos débiles:
 

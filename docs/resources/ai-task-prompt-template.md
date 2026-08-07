@@ -25,7 +25,7 @@ Resultado esperado:
 <describe qué debe quedar funcionando o documentado>
 
 Formato de salida:
-<opciónal: tabla, checklist, diff summary, plan, JSON, markdown, etc.>
+<opcional: tabla, checklist, diff summary, plan, JSON, markdown, etc.>
 
 Criterios de éxito:
 - <criterio verificable 1>

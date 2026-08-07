@@ -13,7 +13,6 @@ Este sitio centraliza los pasos necesarios para preparar un ambiente de desarrol
 - [RuboCop](./guides/tools/rubocop.md)
 - [Devise](./guides/tools/devise.md)
 - [Git y Pull Requests](./guides/workflow/git-pull-requests.md)
-- [CI/CD y Render](./guides/workflow/ci-cd-render.md)
 - [AI Starter Kit](./guides/ai-starter-kit/index.md)
 - [Templates reutilizables](./resources/ai-task-prompt-template.md)
 

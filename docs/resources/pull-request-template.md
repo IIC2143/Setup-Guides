@@ -1,3 +1,6 @@
+# Template de Pull Request
+
+```markdown
 ## Contexto del problema
 
 - <qué problema resuelve este PR>
@@ -19,3 +22,4 @@
 - Impacto esperado: <usuarios, flujo o módulo afectado>
 - Riesgos: <riesgo conocido o "ninguno conocido">
 - Fuera de alcance: <qué no incluye este PR>
+```
