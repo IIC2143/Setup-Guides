@@ -1,0 +1,11 @@
+{
+  "integration": "codex",
+  "version": "0.9.5",
+  "mode": "classroom-simplified",
+  "files": {
+    ".agents/skills/speckit-specify/SKILL.md": "custom",
+    ".agents/skills/speckit-plan/SKILL.md": "custom",
+    ".agents/skills/speckit-implement/SKILL.md": "custom",
+    ".agents/skills/speckit-review/SKILL.md": "custom"
+  }
+}

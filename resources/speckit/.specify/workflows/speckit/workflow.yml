@@ -1,0 +1,71 @@
+schema_version: "1.0"
+workflow:
+  id: "speckit"
+  name: "Simplified SDD Cycle"
+  version: "1.0.0"
+  author: "GitHub"
+  description: "Runs specify → plan → implement → review with review gates"
+
+requires:
+  # 0.8.5 is the first release with engine-side resolution of the
+  # ``integration: "auto"`` default. Older versions would treat "auto"
+  # as a literal integration key and fail at dispatch.
+  speckit_version: ">=0.8.5"
+  integrations:
+    # Simplified classroom flow: spec + plan + implement + review.
+    any:
+      - "claude"
+      - "copilot"
+      - "gemini"
+      - "opencode"
+
+inputs:
+  spec:
+    type: string
+    required: true
+    prompt: "Describe what you want to build"
+  integration:
+    type: string
+    default: "auto"
+    prompt: "Integration to use (e.g. claude, copilot, gemini; 'auto' uses the project's initialized integration)"
+  scope:
+    type: string
+    default: "full"
+    enum: ["full", "backend-only", "frontend-only"]
+
+steps:
+  - id: specify
+    command: speckit.specify
+    integration: "{{ inputs.integration }}"
+    input:
+      args: "{{ inputs.spec }}"
+
+  - id: review-spec
+    type: gate
+    message: "Review the generated spec before planning."
+    options: [approve, reject]
+    on_reject: abort
+
+  - id: plan
+    command: speckit.plan
+    integration: "{{ inputs.integration }}"
+    input:
+      args: "{{ inputs.spec }}"
+
+  - id: review-plan
+    type: gate
+    message: "Review the plan before implementation."
+    options: [approve, reject]
+    on_reject: abort
+
+  - id: implement
+    command: speckit.implement
+    integration: "{{ inputs.integration }}"
+    input:
+      args: "{{ inputs.spec }}"
+
+  - id: review
+    command: speckit.review
+    integration: "{{ inputs.integration }}"
+    input:
+      args: "{{ inputs.spec }}"
