@@ -230,3 +230,9 @@ Una implementación está lista cuando:
 - Escribir criterios no verificables: si no puedes probarlo o revisarlo manualmente, no sirve como criterio de aceptación.
 - Saltarse el plan: el agente termina editando por intuición.
 - No revisar el diff: el spec puede estar bien y la implementación igual salirse de alcance.
+
+## Fuentes
+
+- Repositorio oficial de Spec Kit: <https://github.com/github/spec-kit>
+- Documentación oficial de Spec Kit: <https://github.github.com/spec-kit/>
+- Referencia de comandos de Spec Kit: <https://github.github.com/spec-kit/reference/core.html>
