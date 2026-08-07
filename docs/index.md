@@ -14,7 +14,7 @@ Este sitio centraliza los pasos necesarios para preparar un ambiente de desarrol
 - [Devise](./guides/tools/devise.md)
 - [Git y Pull Requests](./guides/workflow/git-pull-requests.md)
 - [AI Starter Kit](./guides/ai-starter-kit/index.md)
-- [Templates reutilizables](./templates/ai-task-prompt-template.md)
+- [Templates reutilizables](./template/ai-task-prompt-template.md)
 
 ## Recomendación
 

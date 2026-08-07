@@ -20,7 +20,7 @@ La diferencia es el alcance.
 
 | Usa | Cuando |
 | --- | --- |
-| `docs/templates/ai-task-prompt-template.md` | Cambio chico, claro, validable con un check simple y bajo riesgo de tocar archivos extra. |
+| `docs/template/ai-task-prompt-template.md` | Cambio chico, claro, validable con un check simple y bajo riesgo de tocar archivos extra. |
 | Spec Kit | Alcance ambiguo, varios archivos/flujos, casos borde relevantes o necesidad de acordar criterios antes de editar. |
 
 Ejemplos:
@@ -190,9 +190,9 @@ Templates relevantes:
 
 - `.specify/templates/overrides/spec-template.md`
 - `.specify/templates/overrides/plan-template.md`
-- `docs/templates/ai-task-prompt-template.md`
+- `docs/template/ai-task-prompt-template.md`
 
-Para tareas one-shot, usa `docs/templates/ai-task-prompt-template.md`.
+Para tareas one-shot, usa `docs/template/ai-task-prompt-template.md`.
 
 ## Criterio de salida del spec
 

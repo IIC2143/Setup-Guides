@@ -10,9 +10,9 @@ Materiales base para trabajar tareas del curso con apoyo de IA sin perder trazab
 
 ## Templates
 
-- [Prompt de tarea con IA](../../templates/ai-task-prompt-template.md)
-- [Pull Request](../../templates/pull-request-template.md)
-- [Skill reutilizable](../../templates/skill-template.md)
+- [Prompt de tarea con IA](../../template/ai-task-prompt-template.md)
+- [Pull Request](../../template/pull-request-template.md)
+- [Skill reutilizable](../../template/skill-template.md)
 
 ## Workflow relacionado
 
