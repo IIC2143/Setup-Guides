@@ -1,5 +1,10 @@
 # AI Tools
 
+!!! tip "Cápsula de referencia"
+    Esta cápsula complementa la guía con una presentación y orientación práctica sobre herramientas utilizadas actualmente en la industria.
+
+    <a class="md-button md-button--primary" href="https://youtu.be/Xa8yk3HUy30">▶ Ver cápsula 02: AI Tools</a>
+
 Objetivo: usar IA con contexto suficiente, permisos mínimos y cambios revisables.
 
 ## Cómo trabajar con un agente sin perder control

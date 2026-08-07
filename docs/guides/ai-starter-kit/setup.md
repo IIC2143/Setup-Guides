@@ -1,5 +1,10 @@
 # Setup
 
+!!! tip "Cápsula de referencia"
+    Esta cápsula complementa la guía con una presentación y orientación práctica sobre herramientas utilizadas actualmente en la industria.
+
+    <a class="md-button md-button--primary" href="https://youtu.be/VX7E0sHE9bk">▶ Ver cápsula 01: Setup</a>
+
 Objetivo: dejar el repositorio y al menos una herramienta de IA en terminal lista para una primera tarea asistida.
 
 Estado de referencia: verificado el 28 de julio de 2026 contra documentación pública de GitHub, OpenCode, OpenAI, Anthropic y NVIDIA.

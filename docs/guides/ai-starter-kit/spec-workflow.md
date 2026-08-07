@@ -1,5 +1,10 @@
 # Spec Workflow
 
+!!! tip "Cápsula de referencia"
+    Esta cápsula complementa la guía con una presentación y orientación práctica sobre herramientas utilizadas actualmente en la industria.
+
+    <a class="md-button md-button--primary" href="https://youtu.be/gEif-eL134A">▶ Ver cápsula 03: Spec Kit</a>
+
 Objetivo: transformar una necesidad vaga en un cambio pequeño, revisable y validado.
 
 ## Spec Kit simplificado
