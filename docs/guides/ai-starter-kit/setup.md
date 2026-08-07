@@ -67,8 +67,8 @@ GitHub Copilot CLI:
 
 ```bash
 npm install -g @github/copilot
-gh auth login --web
-gh copilot
+copilot login
+copilot
 ```
 
 Codex:
@@ -164,7 +164,6 @@ Para una primera entrega, no necesitas configurar todo. Basta con que el repo te
 
 Ejemplos que sí pueden ir al repo:
 
-- `bin/ci` es el comando esperado antes de abrir un PR.
 - No se deben commitear tokens, claves ni credenciales.
 - Las tareas no triviales deben partir desde un spec y un plan.
 - Los PRs deben apuntar a `main` y pasar CI antes de mergear.
@@ -205,19 +204,63 @@ export NVIDIA_API_KEY="nvapi-..."
 
 ## 7. Probar el agente
 
-Desde la raíz del repositorio:
+Usa el mismo smoke test en cada herramienta: debe leer contexto del repo, responder sin pedir datos extra y dejar `git status` limpio.
 
-```bash
-opencode
-```
-
-Prompt de prueba:
+Prompt base:
 
 ```text
 Lee el README y dime qué comandos mínimos necesito para levantar este proyecto. No edites archivos.
 ```
 
-Resultado esperado:
+### OpenCode
+
+```bash
+opencode
+```
+
+Pega el prompt base en la sesión.
+
+### GitHub Copilot CLI
+
+```bash
+copilot
+```
+
+Pega el prompt base en la sesión. Si quieres probar agentes internos, usa `/agent` y parte con `explore`, porque solo debe leer y responder.
+
+### Codex
+
+Interactivo:
+
+```bash
+codex
+```
+
+Pega el prompt base en la sesión.
+
+No interactivo:
+
+```bash
+codex exec "Lee el README y dime qué comandos mínimos necesito para levantar este proyecto. No edites archivos."
+```
+
+### Claude Code
+
+Interactivo:
+
+```bash
+claude
+```
+
+Pega el prompt base en la sesión.
+
+No interactivo:
+
+```bash
+claude -p "Lee el README y dime qué comandos mínimos necesito para levantar este proyecto. No edites archivos."
+```
+
+Resultado esperado en todos los casos:
 
 - La herramienta responde usando contexto del repositorio.
 - No aparecen errores de autenticación.
