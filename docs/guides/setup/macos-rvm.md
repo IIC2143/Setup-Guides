@@ -58,9 +58,9 @@ gem uninstall concurrent-ruby
 gem install concurrent-ruby -v 1.3.4
 ```
 
-Y establecer la versión global de Ruby en 4.0.1.
+Y establecer Ruby 4.0.1 como versión predeterminada.
 ```bash
-rbenv global 4.0.1
+rvm use 4.0.1 --default
 ```
 
 ## 5. PostgreSQL: superuser

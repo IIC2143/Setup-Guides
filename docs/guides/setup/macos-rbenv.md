@@ -42,12 +42,12 @@ brew install postgresql
 
 ## 4. Ruby y Rails
 
-Instala Ruby 3.3.6 y Ruby on Rails 7.1.0.
+Instala Ruby 4.0.1 y Ruby on Rails 8.1.2.
 
 ```bash
-rbenv install 3.3.6
-rbenv global 3.3.6 
-gem install rails -v 7.1.0
+rbenv install 4.0.1
+rbenv global 4.0.1
+gem install rails -v 8.1.2
 ```
 
 ## 5. PostgreSQL: superuser

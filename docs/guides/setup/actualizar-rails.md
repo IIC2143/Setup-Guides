@@ -1,39 +1,61 @@
-# Actualizar Rails a la versión 7.1
+# Actualizar Rails de 8.1.2 a 8.1.3
 
-La versión 7.0.2 que estábamos utilizando tenía un error con la gema `concurrent-ruby`. Este problema está solucionado en la versión 7.1, así que realizaremos la migración. Aquí podrás encontrar cómo cambiar de la versión 7.0.4 a la nueva versión.
+Esta guía asume que tienes Ruby 4.0.1 y Rails 8.1.2, como indican las guías de instalación, y muestra cómo actualizar Rails a la versión 8.1.3.
 
-Todos los comandos deben ejecutarse en la terminal:
+Todos los comandos deben ejecutarse en la terminal.
 
-1. Desinstalamos la versión de Rails que instalamos anteriormente:
+## Verificar Ruby
 
-```
-gem uninstall rails -v 7.0.2
-```
-
-2. Comprobamos que ya no existe la versión de Rails 7.0.2:
-
-```
-gem list rails
-```
-No debería aparecer ninguna versión o, si tienes alguna otra instalada, no debería aparecer la 7.0.2 en la lista de Rails.
-
-3. Instalamos la nueva versión:
-
-```
-gem install rails -v 7.1
+```bash
+ruby -v
 ```
 
-4. Comprobamos que se instaló correctamente:
+El comando debe mostrar Ruby 4.0.1. Si tienes otra versión, sigue la guía de instalación correspondiente a tu sistema operativo antes de continuar:
 
+- [Ubuntu y WSL](ubuntu.md)
+- [macOS con RVM](macos-rvm.md)
+- [macOS con rbenv](macos-rbenv.md)
+
+## Actualizar Rails en el sistema
+
+Instala Rails 8.1.3:
+
+```bash
+gem install rails -v 8.1.3
 ```
-rails -v
+
+Comprueba la instalación:
+
+```bash
+rails _8.1.3_ -v
 ```
 
-Este comando debería mostrar la versión 7.1.0.
+El comando debe mostrar `Rails 8.1.3`. No es necesario desinstalar Rails 8.1.2: RubyGems permite mantener ambas versiones.
 
-## Actualizar un proyecto existente a Rails 7.1
+## Actualizar un proyecto existente
 
-1. Si tienen un proyecto ya creado y necesitan actualizar la versión de Rails, deben actualizar el archivo `Gemfile` y cambiar la línea que comienza con `gem "rails"` por `gem "rails", "= 7.1.1"`.
-2. Correr `bundle` en la terminal, dentro del proyecto, para actualizar las gemas.
+Antes de empezar, guarda tus cambios y comprueba que el repositorio esté limpio:
 
-Importante: La tarea funciona con Rails `7.2.1`, pero no tendrán problemas ni incompatibilidades, así que no se preocupen.
+```bash
+git status
+```
+
+En el `Gemfile` del proyecto, cambia la versión de Rails:
+
+```ruby
+gem "rails", "8.1.3"
+```
+
+Luego actualiza Rails y sus dependencias:
+
+```bash
+bundle update rails
+```
+
+Comprueba la versión usada por el proyecto:
+
+```bash
+bin/rails -v
+```
+
+El comando debe mostrar `Rails 8.1.3`. Finalmente, ejecuta los tests del proyecto y revisa el cambio en `Gemfile.lock` antes de continuar trabajando.
